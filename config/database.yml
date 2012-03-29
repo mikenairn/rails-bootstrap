@@ -18,6 +18,10 @@
     file = %w[/var/run/mysqld/mysqld.sock /var/lib/mysql/mysql.sock].find {|f| File.exists?(f)}
     ((%x{uname} =~ /darwin/i) == 0) ? "/tmp/mysql.sock" : file
   end
+
+  def git_branch
+    %x{git name-rev --name-only HEAD}.strip
+  end
 %>
 
 login: &login
@@ -29,7 +33,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: rails-template_development
+  database: rails-template_<%= git_branch %>_development
   pool: 5
   socket: <%= socket %>
 
