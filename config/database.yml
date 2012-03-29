@@ -33,7 +33,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: rails-template_<%= git_branch %>_development
+  database: rails-bootstrap_<%= git_branch %>_development
   pool: 5
   socket: <%= socket %>
 
@@ -45,7 +45,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: rails-template_test
+  database: rails-bootstrap_test
   pool: 5
   socket: <%= socket %>
 
@@ -54,6 +54,6 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: rails-template_production
+  database: rails-bootstrap_production
   pool: 5
   socket: <%= socket %>

@@ -1,0 +1,17 @@
+<h1>Product</h1>
+
+<p>
+  <b>Name</b><br>
+  <%= @product.name %>
+</p>
+
+<p>
+  <b>Price</b><br>
+  <%= @product.price %>
+</p>
+
+<div class="form-actions">
+  <%= button_for products_path, :back, "Back" %>
+  <%= button_for edit_product_path(@product), :edit, "Edit" %>
+  <%= button_for product_path(@product), :delete, "Delete" %>
+</div>
