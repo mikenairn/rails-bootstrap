@@ -6,6 +6,8 @@ RailsBootstrap::Application.routes.draw do
                              :sign_in => "login",
                              :sign_out => "logout"}
 
+  mount(Devise::Oauth2Providable::Engine => "/oauth2")
+
   get "home/index"
 
   resources :products

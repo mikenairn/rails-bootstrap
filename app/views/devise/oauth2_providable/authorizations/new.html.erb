@@ -1,0 +1,11 @@
+<h2><%= link_to @client.name, @client.website %> is requesting permission to access your resources.</h2>
+
+<%= form_tag authorizations_path do %>
+    <%= hidden_field_tag :client_id, @client.identifier %>
+    <%= hidden_field_tag :response_type, @response_type %>
+    <%= hidden_field_tag :redirect_uri, @redirect_uri %>
+    <div class="form-actions">
+        <%= submit_tag 'Allow', :class => "btn btn-primary" %>
+        <%= submit_tag 'Deny', :class => "btn"%>
+    </div>
+<% end %>
