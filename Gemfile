@@ -7,6 +7,7 @@ gem 'simple_form'
 gem 'rabl'
 gem 'devise'
 gem 'devise_oauth2_providable'
+gem 'rails_admin'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,6 +24,10 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+end
+
+group :production do
+  gem 'pg'
 end
 
 

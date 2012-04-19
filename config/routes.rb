@@ -1,14 +1,20 @@
 RailsBootstrap::Application.routes.draw do
 
+  devise_for :admins,
+             :path => '/admin',
+             :path_names => {:sign_in => "login",
+                             :sign_out => "logout"}
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   devise_for :users,
              :path => '/',
              :path_names => {:sign_up => "register",
                              :sign_in => "login",
                              :sign_out => "logout"}
-
   mount(Devise::Oauth2Providable::Engine => "/oauth2")
 
   get "home/index"
+  get "home/localsocial_example"
 
   resources :products
 

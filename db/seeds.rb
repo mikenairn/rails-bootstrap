@@ -15,10 +15,16 @@ def setup_client
 end
 
 def setup_user
-  User.create(:email => "m.nairn@gmail.com",
+  User.create(:email => "user@rococosoft.com",
               :password => "noWires",
-              :name => "Mike")
+              :name => "User")
+end
+
+def setup_admin
+  Admin.create(:email => "admin@rococosoft.com",
+              :password => "noWires")
 end
 
 setup_client
 setup_user
+setup_admin
