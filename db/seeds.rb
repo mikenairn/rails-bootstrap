@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 def setup_client
+  #http://stormy-stone-2668.heroku.com/oauth/callback
   c = Devise::Oauth2Providable::Client.create(:name => "RailsBootStrap Sinatra Client",
                                               :redirect_uri => "http://localhost:9393/oauth/callback",
                                               :website => "http://localhost:9393/")
