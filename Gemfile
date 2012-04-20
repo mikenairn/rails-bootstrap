@@ -19,8 +19,8 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'twitter-bootstrap-rails'
 end
+gem 'twitter-bootstrap-rails'
 
 group :development, :test do
   gem 'rspec-rails'
