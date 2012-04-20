@@ -1,0 +1,6 @@
+= LoyaltyEngine
+
+rake loyalty_engine:install:migrations
+rake db:migrate
+
+This project rocks and uses MIT-LICENSE.

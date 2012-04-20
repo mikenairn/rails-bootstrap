@@ -1,0 +1,10 @@
+<legend><%= controller.action_name.capitalize %> Loyalty Schemes</legend>
+<%=  simple_form_for(@loyalty_scheme, :html => {:class => 'form-horizontal' }) do |f| %>
+    <%= f.input :name, :placeholder => "i.e. Coffee Loyalty Scheme" %>
+    <%= f.input :purchase, :label => "Buy this", :placeholder => "i.e.Coffee" %>
+    <%= f.input :redeem, :label => "Get this", :placeholder => "i.e.Coffee"%>
+    <%= f.input :stamps_required, :as => :integer, :hint => "How many must be bought", :placeholder => "i.e. 10" %>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>

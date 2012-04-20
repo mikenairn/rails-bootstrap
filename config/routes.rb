@@ -13,6 +13,8 @@ RailsBootstrap::Application.routes.draw do
                              :sign_out => "logout"}
   mount(Devise::Oauth2Providable::Engine => "/oauth2")
 
+  mount LoyaltyEngine::Engine => "/loyalty"
+
   get "home/index"
   get "home/localsocial_example"
 
@@ -67,7 +69,8 @@ RailsBootstrap::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  root :to => 'home#localsocial_example'
+  match '/loyalty/schemes' => 'loyalty_engine/loyalty_schemes#index' , as: :user_root
 
   # See how all your routes lay out with "rake routes"
 

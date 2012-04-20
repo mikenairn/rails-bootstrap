@@ -11,4 +11,6 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true
 
   has_many :products
+  has_many :loyalty_cards,  :class_name => 'LoyaltyEngine::LoyaltyCard'
+  has_many :loyalty_schemes,  :class_name => 'LoyaltyEngine::LoyaltyScheme'
 end

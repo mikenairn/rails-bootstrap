@@ -1,0 +1,32 @@
+<% content_for :sub_nav do %>
+    <ul class="nav nav-tabs">
+      <li class="active"><%= link_to "Schemes", loyalty_engine.loyalty_schemes_path %></li>
+      <li><%= link_to "Cards", loyalty_engine.loyalty_cards_path %></li>
+    </ul>
+<% end %>
+<h1>Loyalty Cards</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Scheme</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @loyalty_cards.each do |loyalty_card| %>
+      <tr>
+        <td><%= link_to loyalty_card.id, loyalty_card_path(loyalty_card) %></td>
+        <td><%= link_to loyalty_card.loyalty_scheme.name, loyalty_scheme_path(loyalty_card.loyalty_scheme) %></td>
+        <td><%= loyalty_card.created_at %></td>
+        <td>
+            <%= button_for edit_loyalty_card_path(loyalty_card), :edit, nil, :class => 'btn btn-mini' %>
+            <%= button_for loyalty_card_path(loyalty_card), :delete, nil, :class => 'btn btn-mini' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_loyalty_card_path, :class => 'btn btn-primary' %>

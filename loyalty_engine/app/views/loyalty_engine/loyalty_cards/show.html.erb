@@ -1,0 +1,22 @@
+<h1>Loyalty Card</h1>
+
+<p>
+  <b>Scheme</b><br>
+  <%= link_to @loyalty_card.loyalty_scheme.name, loyalty_scheme_path(@loyalty_card.loyalty_scheme) %>
+</p>
+
+<p>
+  <b>Stamps</b><br>
+  <%= @loyalty_card.stamps %> of <%= @loyalty_card.loyalty_scheme.stamps_required%>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @loyalty_card.user_id %>
+</p>
+
+<div class="form-actions">
+  <%= button_for :back, :back, "Back" %>
+  <%= button_for edit_loyalty_card_path(@loyalty_card), :edit, "Edit" %>
+  <%= button_for loyalty_card_path(@loyalty_card), :delete, "Delete" %>
+</div>

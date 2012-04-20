@@ -9,6 +9,10 @@ gem 'devise'
 gem 'devise_oauth2_providable'
 gem 'rails_admin'
 
+#These should be in there own repo but...
+gem 'loyalty_engine', :path => 'loyalty_engine'
+
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

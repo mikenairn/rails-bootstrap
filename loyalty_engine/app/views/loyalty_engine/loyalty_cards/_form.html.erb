@@ -1,0 +1,8 @@
+<legend><%= controller.action_name.capitalize %> Loyalty Cards</legend>
+<%=  simple_form_for(@loyalty_card, :html => {:class => 'form-horizontal' }) do |f| %>
+  <%= f.input :loyalty_scheme_id, :collection => current_user.loyalty_schemes, :as => :select, :prompt => "-- Select Loyalty Scheme --" %>
+  <%= f.input :stamps, :as => :decimal, :input_html => { :value => '0' }%>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

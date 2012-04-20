@@ -1,0 +1,22 @@
+<h1>Loyalty Scheme</h1>
+
+<p>
+  <b>Purchase:</b>
+  <%= @loyalty_scheme.purchase %>
+</p>
+
+<p>
+  <b>Redeem:</b>
+  <%= @loyalty_scheme.redeem %>
+</p>
+
+<p>
+  <b>Stamps required:</b>
+  <%= @loyalty_scheme.stamps_required %>
+</p>
+
+<div class="form-actions">
+  <%= button_for :back, :back, "Back" %>
+  <%= button_for edit_loyalty_scheme_path(@loyalty_scheme), :edit, "Edit" %>
+  <%= button_for loyalty_scheme_path(@loyalty_scheme), :delete, "Delete" %>
+</div>
