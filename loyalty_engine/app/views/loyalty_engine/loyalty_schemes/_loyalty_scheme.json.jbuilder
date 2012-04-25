@@ -1,0 +1,1 @@
+json.(loyalty_scheme, :id, :purchase, :redeem, :stamps_required)

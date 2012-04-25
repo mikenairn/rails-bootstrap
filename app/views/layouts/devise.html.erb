@@ -68,9 +68,13 @@
     <div id="logo" class="hidden-phone">
       <%= link_to image_tag("localsocial_example/localsocial.png"), root_url %>
     </div>
-    <div class="well">
-      <%= render :partial => "shared/show_flash" %>
-      <%= yield %>
+    <div class="row">
+      <div class="offset3 span6">
+        <div class="well">
+          <%= render :partial => "shared/show_flash" %>
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

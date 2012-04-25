@@ -1,0 +1,1 @@
+json.partial! 'show', loyalty_scheme: @loyalty_scheme
