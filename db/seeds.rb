@@ -13,6 +13,12 @@ def setup_client
                                               :website => "http://localhost:9393/")
   c.update_attribute(:identifier, "120094574673767")
   c.update_attribute(:secret, "b54dc82476af2814e620b86776c42c0e")
+
+  c = Devise::Oauth2Providable::Client.create(:name => "RailsBootStrap Java Client",
+                                              :redirect_uri => "http://pure-leaf-6787.herokuapp.com/oauth/callback",
+                                              :website => "http://pure-leaf-6787.herokuapp.com")
+  c.update_attribute(:identifier, "5496d8355b5179a7dbcfda639886197b")
+  c.update_attribute(:secret, "6da4d17be5700afe42520e63af316fea")
 end
 
 def setup_user
