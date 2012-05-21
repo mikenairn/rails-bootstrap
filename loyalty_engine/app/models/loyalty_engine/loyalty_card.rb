@@ -4,6 +4,6 @@ module LoyaltyEngine
     belongs_to :loyalty_scheme
     validates :loyalty_scheme_id, :presence => true
     validates :stamps, :presence => true, :numericality => {:greater_than_or_equal_to => 0}
-    attr_accessible :stamps, :loyalty_scheme_id
+    attr_accessible :stamps, :loyalty_scheme_id, :user_id
   end
 end

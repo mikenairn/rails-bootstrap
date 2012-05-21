@@ -33,6 +33,11 @@ RailsBootstrap::Application.configure do
   # See everything in the log (default is :info)
   # config.log_level = :debug
 
+  if ENV['DEBUG_MODE']
+    config.logger = Logger.new(STDOUT)
+    config.logger.level = Logger::INFO
+  end
+
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
 

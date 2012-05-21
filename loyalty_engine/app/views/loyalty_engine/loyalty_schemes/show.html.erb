@@ -15,6 +15,11 @@
   <%= @loyalty_scheme.stamps_required %>
 </p>
 
+<p>
+  <b>Total Cards:</b>
+  <%= @loyalty_scheme.loyalty_cards.count %>
+</p>
+
 <div class="form-actions">
   <%= button_for :back, :back, "Back" %>
   <%= button_for edit_loyalty_scheme_path(@loyalty_scheme), :edit, "Edit" %>

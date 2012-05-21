@@ -22,14 +22,14 @@ def setup_client
 end
 
 def setup_user
-  User.create(:email => "user@rococosoft.com",
-              :password => "noWires",
+  User.create(:email => "user@example.com",
+              :password => "password",
               :name => "User")
 end
 
 def setup_admin
-  Admin.create(:email => "admin@rococosoft.com",
-              :password => "noWires")
+  Admin.create(:email => "admin@example.com",
+              :password => "password")
 end
 
 setup_client

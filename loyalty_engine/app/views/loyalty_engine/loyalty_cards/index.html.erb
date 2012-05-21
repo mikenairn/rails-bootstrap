@@ -1,7 +1,7 @@
 <% content_for :sub_nav do %>
     <ul class="nav nav-tabs">
       <li><%= link_to "Schemes", loyalty_engine.loyalty_schemes_path %></li>
-      <li class="active"><%= link_to "Cards", loyalty_engine.loyalty_cards_path %></li>
+      <li class="active"><%= link_to "Scheme Cards", loyalty_engine.loyalty_cards_path %></li>
     </ul>
 <% end %>
 <h1>Loyalty Cards</h1>
@@ -10,6 +10,7 @@
     <tr>
       <th>ID</th>
       <th>Scheme</th>
+      <th>Card Holder</th>
       <th>Created at</th>
       <th>Actions</th>
     </tr>
@@ -19,6 +20,7 @@
       <tr>
         <td><%= link_to loyalty_card.id, loyalty_card_path(loyalty_card) %></td>
         <td><%= link_to loyalty_card.loyalty_scheme.name, loyalty_scheme_path(loyalty_card.loyalty_scheme) %></td>
+        <td><%= loyalty_card.user.email %></td>
         <td><%= loyalty_card.created_at %></td>
         <td>
             <%= button_for edit_loyalty_card_path(loyalty_card), :edit, nil, :class => 'btn btn-mini' %>
