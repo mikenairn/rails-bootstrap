@@ -1,24 +1,4 @@
-# MySQL.  Versions 4.1 and 5.0 are recommended.
-# 
-# Install the MYSQL driver
-#   gem install mysql2
-#
-# Ensure the MySQL gem is defined in your Gemfile
-#   gem 'mysql2'
-#
-# And be sure to use new-style password hashing:
-#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
-
 <%
-  #
-  # change to work on the mac
-  #
-  def socket
-    os = %x{uname}
-    file = %w[/var/run/mysqld/mysqld.sock /var/lib/mysql/mysql.sock].find {|f| File.exists?(f)}
-    ((%x{uname} =~ /darwin/i) == 0) ? "/tmp/mysql.sock" : file
-  end
-
   def git_branch
     %x{git name-rev --name-only HEAD}.strip
   end
@@ -26,34 +6,22 @@
 
 login: &login
   username: root
-  password: noWires
+  password:
 
 development:
-  <<: *login
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: rails-bootstrap_<%= git_branch %>_development
+  adapter: sqlite3
+  database: db/rails-bootstrap_<%= git_branch %>_development.sqlite3
   pool: 5
-  socket: <%= socket %>
+  timeout: 5000
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
-  <<: *login
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: rails-bootstrap_test
+  adapter: sqlite3
+  database: db/rails-bootstrap_test.sqlite3
   pool: 5
-  socket: <%= socket %>
+  timeout: 5000
 
 production:
-  <<: *login
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: rails-bootstrap_production
+  adapter: sqlite3
+  database: db/rails-bootstrap_production.sqlite3
   pool: 5
-  socket: <%= socket %>
+  timeout: 5000

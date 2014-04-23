@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
+ruby "1.9.3"
 
 gem 'rails', '3.2.2'
-gem 'mysql2'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'jbuilder'
@@ -27,6 +27,7 @@ end
 gem 'twitter-bootstrap-rails'
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
 end
 
